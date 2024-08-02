@@ -48,7 +48,7 @@ function determineCondition(value: number, ratioType: RatioType) {
 
 function calculateRatioOf(array: number[], ratioType: RatioType): number {
   return (
-    array.reduce<number>((previousValue, currentValue) => {
+    array.reduce((previousValue, currentValue) => {
       if (determineCondition(currentValue, ratioType)) {
         return previousValue + 1;
       }
