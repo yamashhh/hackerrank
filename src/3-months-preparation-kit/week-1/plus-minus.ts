@@ -1,5 +1,3 @@
-"use strict";
-
 process.stdin.resume();
 process.stdin.setEncoding("utf-8");
 
@@ -7,11 +5,11 @@ let inputString = "";
 let inputLines: string[] = [];
 let currentLine = 0;
 
-process.stdin.on("data", function (inputStdin: string): void {
+process.stdin.on("data", (inputStdin: string): void => {
   inputString += inputStdin;
 });
 
-process.stdin.on("end", function (): void {
+process.stdin.on("end", (): void => {
   inputLines = inputString.split("\n");
   inputString = "";
 
@@ -74,14 +72,12 @@ function plusMinus(arr: number[]): void {
 }
 
 function main() {
-  // @ts-expect-error original code from HackerRank
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const n: number = parseInt(readLine().trim(), 10);
+  const n: number = Number.parseInt(readLine().trim(), 10);
 
   const arr: number[] = readLine()
     .replace(/\s+$/g, "")
     .split(" ")
-    .map((arrTemp) => parseInt(arrTemp, 10));
+    .map((arrTemp) => Number.parseInt(arrTemp, 10));
 
   plusMinus(arr);
 }

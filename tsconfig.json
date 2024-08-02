@@ -3,5 +3,5 @@
     "@tsconfig/strictest/tsconfig",
     "@tsconfig/node-lts/tsconfig.json"
   ],
-  "exclude": ["eslint.config.mjs", "lint-staged.config.mjs"]
+  "exclude": ["lint-staged.config.mjs"]
 }

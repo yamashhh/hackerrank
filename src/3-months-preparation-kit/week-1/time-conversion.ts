@@ -1,6 +1,4 @@
-"use strict";
-
-import { WriteStream, createWriteStream } from "fs";
+import { type WriteStream, createWriteStream } from "node:fs";
 process.stdin.resume();
 process.stdin.setEncoding("utf-8");
 
@@ -8,11 +6,11 @@ let inputString = "";
 let inputLines: string[] = [];
 let currentLine = 0;
 
-process.stdin.on("data", function (inputStdin: string): void {
+process.stdin.on("data", (inputStdin: string): void => {
   inputString += inputStdin;
 });
 
-process.stdin.on("end", function (): void {
+process.stdin.on("end", (): void => {
   inputLines = inputString.split("\n");
   inputString = "";
 
@@ -46,13 +44,13 @@ function timeConversion(s: string): string {
 
 function main() {
   // @ts-expect-error original code from HackerRank
-  const ws: WriteStream = createWriteStream(process.env["OUTPUT_PATH"]);
+  const ws: WriteStream = createWriteStream(process.env.OUTPUT_PATH);
 
   const s: string = readLine();
 
   const result: string = timeConversion(s);
 
-  ws.write(result + "\n");
+  ws.write(`${result}\n`);
 
   ws.end();
 }
