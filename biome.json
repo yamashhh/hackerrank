@@ -16,10 +16,8 @@
   },
   "formatter": {
     "enabled": true,
-    "ignore": ["pnpm-lock.yaml"],
+    "includes": ["**", "!**/pnpm-lock.yaml"],
     "indentStyle": "space"
   },
-  "organizeImports": {
-    "enabled": true
-  }
+  "assist": { "actions": { "source": { "organizeImports": "on" } } }
 }

@@ -1,4 +1,5 @@
-import { type WriteStream, createWriteStream } from "node:fs";
+import { createWriteStream, type WriteStream } from "node:fs";
+
 process.stdin.resume();
 process.stdin.setEncoding("utf-8");
 
